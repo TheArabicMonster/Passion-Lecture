@@ -10,7 +10,7 @@
 
         private void MenuBurger_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("MENU BURGOUZZZ","1","2");
+            DisplayAlert("titre test alert","desc alert","ok");
         }
 
 
