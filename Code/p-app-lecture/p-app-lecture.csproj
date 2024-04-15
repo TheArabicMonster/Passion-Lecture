@@ -57,9 +57,50 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="account.xaml.cs" />
+	  <Compile Remove="DétailLivre.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\logo home.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="account.xaml" />
+	  <MauiXaml Remove="DétailLivre.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\logo home.png" />
+	  <None Remove="Resources\Images\logo_account.png" />
+	  <None Remove="Resources\Images\logo_bookmarck.png" />
+	  <None Remove="Resources\Images\logo_home.png" />
+	  <None Remove="Resources\Images\logo_maison.png" />
+	  <None Remove="Resources\Images\logo_param.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Bookmark.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Compte.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="DetailLivre.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Lecture.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Parametre.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

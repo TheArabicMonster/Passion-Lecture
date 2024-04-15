@@ -12,11 +12,5 @@
             />
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <!-- Le contenu de votre page -->
-            <!-- Ajoutez ici les autres éléments de votre interface utilisateur -->
-        </VerticalStackLayout>
-    </ScrollView>
 
 </ContentPage>
