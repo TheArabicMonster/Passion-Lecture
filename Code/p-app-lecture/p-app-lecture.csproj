@@ -57,8 +57,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NewFolder\**" />
+	  <Compile Remove="NewFolder\**" />
+	  <EmbeddedResource Remove="NewFolder\**" />
+	  <MauiCss Remove="NewFolder\**" />
+	  <MauiXaml Remove="NewFolder\**" />
+	  <None Remove="NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Remove="account.xaml.cs" />
 	  <Compile Remove="DétailLivre.xaml.cs" />
+	  <Compile Remove="Parametre.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,6 +78,7 @@
 	<ItemGroup>
 	  <MauiXaml Remove="account.xaml" />
 	  <MauiXaml Remove="DétailLivre.xaml" />
+	  <MauiXaml Remove="Parametre.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,6 +94,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="VersOne.Epub" Version="3.3.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -98,9 +110,10 @@
 	  <MauiXaml Update="Lecture.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Parametre.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Books-Epub\" />
 	</ItemGroup>
 
 </Project>

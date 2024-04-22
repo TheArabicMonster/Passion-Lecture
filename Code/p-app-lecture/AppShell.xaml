@@ -4,26 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:p_app_lecture"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Title="p_app_lecture">
-
-    <FlyoutItem>
-        <ShellContent
+    
+    <TabBar>
+        <Tab Icon="logo_home.png" Title="Home">
+            <ShellContent
              ContentTemplate="{DataTemplate local:MainPage}"
              Route="MainPage"
-             Icon="logo_home.png"/>
-        <ShellContent
+             />
+        </Tab>
+        <Tab Icon="logo_bookmarck.png" Title="BookMark">
+            <ShellContent
              ContentTemplate="{DataTemplate local:Bookmark}"
              Route="Bookmark"
-             Icon="logo_bookmarck.png"/>
-        <ShellContent
-            ContentTemplate="{DataTemplate local:Parametre}"
-            Route="Parametre"
-            Icon="logo_param.png"/>
-        <ShellContent
+             />
+        </Tab>
+        <Tab Icon="logo_account.png" Title="Account">
+            <ShellContent
             ContentTemplate="{DataTemplate local:Compte}"
             Route="Compte"
-            Icon="logo_account.png"/>
-    </FlyoutItem>
+            />
+        </Tab>
+    </TabBar>
 
 </Shell>
