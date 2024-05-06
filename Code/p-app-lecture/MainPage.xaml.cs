@@ -6,44 +6,18 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using VersOne.Epub;
+using System.Data.SqlClient;
 
 namespace p_app_lecture
 {
     public partial class MainPage : ContentPage
     {
-        public ObservableCollection<Book> Books { get; } = new ObservableCollection<Book>();
+        string connectionString = "server=localhost;user=root;database=db_livres;port=3306;password=root;";
+
 
         public MainPage()
         {
             InitializeComponent();
-            LoadBooksFromFolder("p-app-lecture\\Resources\\Books-Epub");
-            BindingContext = this;
-        }
-
-        private void LoadBooksFromFolder(string folderPath)
-        {
-            string[] epubFiles = Directory.GetFiles(folderPath, "*.epub");
-
-            foreach (string epubFilePath in epubFiles)
-            {
-                LoadBooksFromEpubFile(epubFilePath);
-            }
-        }
-
-        private void LoadBooksFromEpubFile(string epubFilePath)
-        {
-            EpubBook epubBook = EpubReader.ReadBook(epubFilePath);
-
-            Book book = new Book
-            {
-                Title = epubBook.Title,
-                Author = epubBook.Author,
-                CoverImagePath = Path.Combine(Path.GetDirectoryName(epubFilePath), "cover.jpg")
-            };
-
-            Books.Add(book);
         }
     }
-
-
 }
