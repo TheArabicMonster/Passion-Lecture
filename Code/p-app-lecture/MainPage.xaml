@@ -5,16 +5,15 @@
              Title="Home"
              BackgroundColor="AliceBlue">
 
-    <CollectionView ItemsSource="{Binding Books}">
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" Span="2" />
-        </CollectionView.ItemsLayout>
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Image Source="{Binding CoverImagePath}" Aspect="AspectFill" />
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-    
+    <StackLayout>
+        <ListView ItemsSource="{Binding Books}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
 
 </ContentPage>
