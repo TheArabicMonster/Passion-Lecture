@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:p_app_lecture"
              x:Class="p_app_lecture.MainPage"
              Title="Home"
              BackgroundColor="AliceBlue">
 
+
     <StackLayout>
-        <ListView ItemsSource="{Binding Books}">
+        <Label Text="test"/>
+        <ListView x:Name="list">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Title}" />
+                    <ViewCell>
+                        <Label Text="{Binding Title}"
+                       BackgroundColor="LightGray"
+                       FontSize="18"
+                       FontAttributes="Bold" />
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

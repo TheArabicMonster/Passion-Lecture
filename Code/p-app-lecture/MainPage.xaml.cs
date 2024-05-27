@@ -6,23 +6,29 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using VersOne.Epub;
-using MySql.Data.MySqlClient;
 using System.Diagnostics;
 using System.Data;
+using MySqlConnector;
 
 namespace p_app_lecture
 {
     public partial class MainPage : ContentPage
     {
-        string connectionString = "server=localhost;user=root;database=db_livres;port=3306;password=root;";
-        public ObservableCollection<Book> Books = new ObservableCollection<Book>();
+        public List<Book> Books2 = new List<Book>() { new Book {Title="testbook" } };
+        string connectionString = "server=10.0.2.2;user=root;database=db_livres;port=6033;password=root;";
+        public List<Book> Books { get; set; }
         public MainPage()
         {
+            
+           
             InitializeComponent();
-            Books = new ObservableCollection<Book>();
+            Books = new List<Book>();
             GetLivresFromDB();
-            BindingContext = this;
+            list.ItemsSource = Books;
+
         }
+
+
 
         private void GetLivresFromDB()
         {
@@ -47,7 +53,9 @@ namespace p_app_lecture
                             Debug.WriteLine($"Nombre de livres récupérés : {Books.Count}");
                             
                             book.Id = reader.GetInt32("idLivre");
+                            Debug.WriteLine(book.Id);
                             book.Title = reader.GetString("titre");
+                            Debug.WriteLine(book.Title);
                             //book.EpubFile = 
                             book.Summary = reader.GetString("extrait");
                             book.YearPublished = reader.GetInt32("anneeEdition");
